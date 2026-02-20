@@ -290,6 +290,23 @@
             </div>
         </div>
     </footer>
-
+<script>
+const nav = document.querySelector('.navbar');
+const toggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  toggle.querySelector('i').classList.toggle('fa-bars');
+  toggle.querySelector('i').classList.toggle('fa-xmark');
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+}));
+</script>
 </body>
+    
 </html>
+
